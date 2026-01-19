@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://nqnqmuewlksr"]
+[gd_scene load_steps=5 format=3 uid="uid://nqnqmuewlksr"]
 
 [ext_resource type="Texture2D" uid="uid://dsbfmjo3ad5s7" path="res://Assets/customer1.png" id="1_7tiyv"]
+[ext_resource type="Script" uid="uid://b3rymf5fphids" path="res://customer.gd" id="1_r8ta2"]
+[ext_resource type="Texture2D" uid="uid://chviei3xkndnu" path="res://Assets/bubble.png" id="2_f7asb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8l5f2"]
 animations = [{
@@ -14,8 +16,15 @@ animations = [{
 }]
 
 [node name="Customer" type="Area2D"]
-position = Vector2(293, 380)
+script = ExtResource("1_r8ta2")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Bubble" type="Sprite2D" parent="."]
+position = Vector2(-99.635, 405.917)
+rotation = -0.25830874
+scale = Vector2(0.40407673, 0.40407676)
+texture = ExtResource("2_f7asb")
+
+[node name="CustomerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 540)
 sprite_frames = SubResource("SpriteFrames_8l5f2")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5v7x43tc5lum"]
+
+[ext_resource type="Texture2D" uid="uid://dsmr0535o8v4o" path="res://Assets/right.png" id="1_t12fx"]
+[ext_resource type="Script" uid="uid://hulnt5bjxag2" path="res://true_sprite.gd" id="2_bjtp8"]
+[ext_resource type="Texture2D" uid="uid://dbocb3ju7052c" path="res://Assets/wrong.png" id="2_wlcb5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TrueSprite" type="Sprite2D" parent="."]
+position = Vector2(1440, 864)
+texture = ExtResource("1_t12fx")
+script = ExtResource("2_bjtp8")
+
+[node name="FalseSprite" type="Sprite2D" parent="."]
+position = Vector2(480, 864)
+texture = ExtResource("2_wlcb5")
