@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt1at8h104783"]
+
+[sub_resource type="Theme" id="Theme_0vvm8"]
+
+[node name="Button" type="Button"]
+offset_left = 133.0
+offset_top = 88.0
+offset_right = 398.0
+offset_bottom = 229.0
+theme = SubResource("Theme_0vvm8")
+text = "Butt on"

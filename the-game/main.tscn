@@ -1,10 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://c55dwhb62058h"]
+[gd_scene load_steps=5 format=3 uid="uid://c55dwhb62058h"]
 
 [ext_resource type="PackedScene" uid="uid://nqnqmuewlksr" path="res://customer.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dyf12t7n04ak4" path="res://table.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dt1at8h104783" path="res://button.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://c1gjtxw0ys6d6" path="res://button_manager.gd" id="4_1bvp3"]
 
 [node name="Main" type="Node"]
 
 [node name="Customer" parent="." instance=ExtResource("1_0xm2m")]
 
 [node name="table" parent="." instance=ExtResource("2_h2yge")]
+
+[node name="Button1" parent="." instance=ExtResource("3_h2yge")]
+
+[node name="Button Manager" type="Node" parent="."]
+script = ExtResource("4_1bvp3")
+
+[node name="Button2" parent="." instance=ExtResource("3_h2yge")]
+offset_left = 588.0
+offset_top = 92.0
+offset_right = 853.0
+offset_bottom = 233.0
+text = "Butt on 2"
+
+[node name="Button3" parent="." instance=ExtResource("3_h2yge")]
+offset_left = 994.0
+offset_top = 101.0
+offset_right = 1259.0
+offset_bottom = 242.0
+text = "Butt on 3"
+
+[connection signal="pressed" from="Button1" to="Button Manager" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="Button Manager" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="Button Manager" method="_on_button_3_pressed"]
