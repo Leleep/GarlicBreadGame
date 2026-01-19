@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c55dwhb62058h"]
+
+[ext_resource type="PackedScene" uid="uid://nqnqmuewlksr" path="res://customer.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dyf12t7n04ak4" path="res://table.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node"]
+
+[node name="Customer" parent="." instance=ExtResource("1_0xm2m")]
+
+[node name="table" parent="." instance=ExtResource("2_h2yge")]
