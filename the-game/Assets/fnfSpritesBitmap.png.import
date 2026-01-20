@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ua6gvkigct"
+path="res://.godot/imported/fnfSpritesBitmap.png-63c2f440621e4fac6fd81e4350058989.res"
+
+[deps]
+
+source_file="res://Assets/fnfSpritesBitmap.png"
+dest_files=["res://.godot/imported/fnfSpritesBitmap.png-63c2f440621e4fac6fd81e4350058989.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

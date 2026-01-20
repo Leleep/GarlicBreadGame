@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://nqnqmuewlksr" path="res://customer.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dyf12t7n04ak4" path="res://table.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" path="res://button.tscn" id="3_h2yge"]
-[ext_resource type="Script" path="res://button_manager.gd" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dt1at8h104783" path="res://button.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://c1gjtxw0ys6d6" path="res://button_manager.gd" id="4_1bvp3"]
 
 [sub_resource type="Theme" id="Theme_1bvp3"]
 
@@ -12,7 +12,6 @@
 [node name="Customer" parent="." instance=ExtResource("1_0xm2m")]
 
 [node name="table" parent="." instance=ExtResource("2_h2yge")]
-visible = false
 
 [node name="Clickable Sprites" parent="." instance=ExtResource("3_h2yge")]
 
@@ -37,5 +36,6 @@ offset_bottom = 242.0
 text = "Butt on 3"
 
 [connection signal="pressed" from="Button1" to="Button Manager" method="_on_button_pressed"]
+[connection signal="pattern_pressed" from="Button Manager" to="Button Manager" method="_on_pattern_pressed"]
 [connection signal="pressed" from="Button2" to="Button Manager" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="Button Manager" method="_on_button_3_pressed"]

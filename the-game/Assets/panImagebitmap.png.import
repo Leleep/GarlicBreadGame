@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://v5s4pxsmxqeu"
+path="res://.godot/imported/panImagebitmap.png-29dd2c36848c18a6b3830cecede558f0.res"
+
+[deps]
+
+source_file="res://Assets/panImagebitmap.png"
+dest_files=["res://.godot/imported/panImagebitmap.png-29dd2c36848c18a6b3830cecede558f0.res"]
+
+[params]
+
+create_from=0
+threshold=0.0
