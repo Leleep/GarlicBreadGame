@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cti6gbw6sqt4q"]
+
+[ext_resource type="Script" uid="uid://cd52osfki3vtl" path="res://texture_button_control.gd" id="1_aaavc"]
+[ext_resource type="Texture2D" uid="uid://dsmr0535o8v4o" path="res://Assets/right.png" id="2_jdeh3"]
+[ext_resource type="BitMap" uid="uid://cesjboq1oxpni" path="res://Assets/rightBitmap.png" id="3_e4aq2"]
+[ext_resource type="Texture2D" uid="uid://dbocb3ju7052c" path="res://Assets/wrong.png" id="4_e4aq2"]
+[ext_resource type="BitMap" uid="uid://58s3q3cgvv55" path="res://Assets/wrongBitmap.png" id="5_f5m6o"]
+
+[node name="Texture_button_Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aaavc")
+
+[node name="Correct_dish" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1097.0
+offset_top = 774.0
+offset_right = 1382.0
+offset_bottom = 1074.0
+texture_normal = ExtResource("2_jdeh3")
+texture_click_mask = ExtResource("3_e4aq2")
+
+[node name="Wrong_dish" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 763.0
+offset_right = 749.0
+offset_bottom = 1063.0
+texture_normal = ExtResource("4_e4aq2")
+texture_click_mask = ExtResource("5_f5m6o")

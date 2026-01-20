@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://58s3q3cgvv55"
+path="res://.godot/imported/wrongBitmap.png-01158db58275591a8468fa0d2aaafd73.res"
+
+[deps]
+
+source_file="res://Assets/wrongBitmap.png"
+dest_files=["res://.godot/imported/wrongBitmap.png-01158db58275591a8468fa0d2aaafd73.res"]
+
+[params]
+
+create_from=0
+threshold=0.0

@@ -38,23 +38,19 @@ func _process(delta: float) -> void:
 					buttonState = 3
 				_:
 					buttonState = 0
-	print("Button State : ", buttonState)
 	pass
 
 
 func _on_button_pressed() -> void:
-	print("Button1 Pressed")
 	buttonPressed = 1
 	pass # Replace with function body.
 
 
 func _on_button_2_pressed() -> void:
-	print("Button 2 pressed")
 	buttonPressed = 2
 	pass # Replace with function body.
 
 
 func _on_button_3_pressed() -> void:
-	print("Button 3 pressed")
 	buttonPressed = 3
 	pass # Replace with function body.

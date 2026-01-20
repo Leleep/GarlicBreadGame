@@ -25,6 +25,7 @@ offset_top = -3.0
 offset_right = 397.0
 offset_bottom = 564.0
 pivot_offset = Vector2(200, 283)
+toggle_mode = true
 texture_normal = ExtResource("1_7tiyv")
 texture_hover = ExtResource("2_r8ta2")
 texture_click_mask = ExtResource("3_f7asb")
