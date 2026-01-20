@@ -1,115 +1,91 @@
 extends Node
+var currentState : GlobalEnums.State = GlobalEnums.State.Empty
 
-enum Item {Dona, Puri, GreenPaani, RedPaani, Masala, FriedTikki, Dahi, Chutney, Aloo, Tikki}
-
-# RPP - Red Pani Puri
-# GPP - Green Pani Puri
-enum State {
-	Empty,
-	Puri,
-	AlooPuri,
-	RedAlooPuri,
-	GreenAlooPuri,
-	RPP,
-	GPP,
-	Dona,
-	TikkiDona,
-	DahiTikki,
-	ChutneyDahiTikki,
-	ChutneyTikki,
-	AlooTikki,
-	TikkiComplete,
-	Garbage,
-	Tikki,
-	}
-
-var currentState : State = State.Empty
-
-func updateState(item : Item):
+func updateState(item : GlobalEnums.Item):
 	match currentState:
-		State.Empty:
+		GlobalEnums.State.Empty:
 			match item:
-				Item.Puri:
-					currentState = State.Puri
-				Item.Dona:
-					currentState = State.Dona
-				Item.Tikki:
-					currentState = State.Tikki
+				GlobalEnums.Item.Puri:
+					currentState = GlobalEnums.State.Puri
+				GlobalEnums.Item.Dona:
+					currentState = GlobalEnums.State.Dona
+				GlobalEnums.Item.Tikki:
+					currentState = GlobalEnums.State.Tikki
 				_:
-					currentState = State.Garbage
+					currentState = GlobalEnums.State.Garbage
 			pass
-		State.Puri:
+		GlobalEnums.State.Puri:
 			match item:
-				Item.Aloo:
-					currentState = State.AlooPuri
+				GlobalEnums.Item.Aloo:
+					currentState = GlobalEnums.State.AlooPuri
 				_:
-					currentState = State.Garbage
-		State.AlooPuri:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.AlooPuri:
 			match item:
-				Item.GreenPaani:
-					currentState  = State.GreenAlooPuri
-				Item.RedPaani:
-					currentState = State.RedAlooPuri
+				GlobalEnums.Item.GreenPaani:
+					currentState  = GlobalEnums.State.GreenAlooPuri
+				GlobalEnums.Item.RedPaani:
+					currentState = GlobalEnums.State.RedAlooPuri
 				_:
-					currentState = State.Garbage
-		State.GreenAlooPuri:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.GreenAlooPuri:
 			match item:
-				Item.Masala:
-					currentState = State.GPP
+				GlobalEnums.Item.Masala:
+					currentState = GlobalEnums.State.GPP
 				_:
-					currentState = State.Garbage
-		State.RedAlooPuri:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.RedAlooPuri:
 			match item:
-				Item.Masala:
-					currentState = State.RPP
+				GlobalEnums.Item.Masala:
+					currentState = GlobalEnums.State.RPP
 				_:
-					currentState = State.Garbage
-		State.Dona:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.Dona:
 			match item:
-				Item.FriedTikki:
-					currentState = State.TikkiDona
+				GlobalEnums.Item.FriedTikki:
+					currentState = GlobalEnums.State.TikkiDona
 				_:
-					currentState = State.Garbage
-		State.TikkiDona:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.TikkiDona:
 			match item:
-				Item.Dahi:
-					currentState = State.DahiTikki
-				Item.Chutney:
-					currentState = State.ChutneyTikki
+				GlobalEnums.Item.Dahi:
+					currentState = GlobalEnums.State.DahiTikki
+				GlobalEnums.Item.Chutney:
+					currentState = GlobalEnums.State.ChutneyTikki
 				_:
-					currentState = State.Garbage
-		State.DahiTikki:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.DahiTikki:
 			match item:
-				Item.Chutney:
-					currentState = State.ChutneyDahiTikki
+				GlobalEnums.Item.Chutney:
+					currentState = GlobalEnums.State.ChutneyDahiTikki
 				_:
-					currentState = State.Garbage
-		State.ChutneyTikki:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.ChutneyTikki:
 			match item:
-				Item.Dahi:
-					currentState = State.ChutneyDahiTikki
+				GlobalEnums.Item.Dahi:
+					currentState = GlobalEnums.State.ChutneyDahiTikki
 				_:
-					currentState = State.Garbage
-		State.ChutneyDahiTikki:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.ChutneyDahiTikki:
 			match item:
-				Item.Aloo:
-					currentState = State.AlooTikki
+				GlobalEnums.Item.Aloo:
+					currentState = GlobalEnums.State.AlooTikki
 				_:
-					currentState = State.Garbage
-		State.AlooTikki:
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.AlooTikki:
 			match item:
-				Item.Masala:
-					currentState = State.TikkiComplete
+				GlobalEnums.Item.Masala:
+					currentState = GlobalEnums.State.TikkiComplete
 				_:
-					currentState = State.Garbage
-		State.GPP:
-			currentState = State.Garbage
-		State.RPP:
-			currentState = State.Garbage
-		State.TikkiComplete:
-			currentState = State.Garbage
-		State.Tikki:
-			currentState = State.Garbage
+					currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.GPP:
+			currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.RPP:
+			currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.TikkiComplete:
+			currentState = GlobalEnums.State.Garbage
+		GlobalEnums.State.Tikki:
+			currentState = GlobalEnums.State.Garbage
 		_:
 			print("Invalid state encountered")
 	print("State changed to", currentState)
@@ -123,55 +99,63 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+var TikkiOnTava : int = 0
 
 func _on_pan_pressed() -> void:
-	updateState(Item.FriedTikki)
+	if currentState == GlobalEnums.State.Tikki:
+		TikkiOnTava += 1
+		currentState = GlobalEnums.State.Empty
+	elif currentState == GlobalEnums.State.Dona and TikkiOnTava > 0:
+		updateState(GlobalEnums.Item.FriedTikki)
+		TikkiOnTava -= 1
+	else :
+		print("Tava Not Applicable")
 	pass # Replace with function body.
 
 
 func _on_plates_pressed() -> void:
-	updateState(Item.Dona)
+	updateState(GlobalEnums.Item.Dona)
 	pass # Replace with function body.
 
 
 func _on_red_paani_pressed() -> void:
-	updateState(Item.RedPaani)
+	updateState(GlobalEnums.Item.RedPaani)
 	pass # Replace with function body.
 
 
 func _on_green_pani_pressed() -> void:
-	updateState(Item.GreenPaani)
+	updateState(GlobalEnums.Item.GreenPaani)
 	pass # Replace with function body.
 
 
 func _on_puriyaan_pressed() -> void:
-	updateState(Item.Puri)
+	updateState(GlobalEnums.Item.Puri)
 	pass # Replace with function body.
 
 
 func _on_masala_pressed() -> void:
-	updateState(Item.Masala)
+	updateState(GlobalEnums.Item.Masala)
 	pass # Replace with function body.
 
 
 func _on_kachchi_tikkiyaan_pressed() -> void:
-	updateState(Item.Tikki)
+	updateState(GlobalEnums.Item.Tikki)
 	pass # Replace with function body.
 
 
 func _on_aloo_matar_pressed() -> void:
-	updateState(Item.Aloo)
+	updateState(GlobalEnums.Item.Aloo)
 	pass # Replace with function body.
 
 
 func _on_dahi_pressed() -> void:
-	updateState(Item.Dahi)
+	updateState(GlobalEnums.Item.Dahi)
 
 
 func _on_chutney_pressed() -> void:
-	updateState(Item.Chutney)
+	updateState(GlobalEnums.Item.Chutney)
 
 
 func _on_dustbin_pressed() -> void:
-	currentState = State.Empty
-	print("Dustbin used. Current State is ", currentState)
+	currentState = GlobalEnums.State.Empty
+	print("Dustbin used. Current GlobalEnums.State is ", currentState)
