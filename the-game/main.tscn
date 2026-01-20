@@ -12,7 +12,6 @@
 [node name="Customer" parent="." instance=ExtResource("1_0xm2m")]
 
 [node name="table" parent="." instance=ExtResource("2_h2yge")]
-visible = false
 
 [node name="Button1" parent="." instance=ExtResource("3_h2yge")]
 offset_left = 200.0
@@ -39,5 +38,6 @@ offset_bottom = 242.0
 text = "Butt on 3"
 
 [connection signal="pressed" from="Button1" to="Button Manager" method="_on_button_pressed"]
+[connection signal="pattern_pressed" from="Button Manager" to="Button Manager" method="_on_pattern_pressed"]
 [connection signal="pressed" from="Button2" to="Button Manager" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="Button Manager" method="_on_button_3_pressed"]

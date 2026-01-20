@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=3 uid="uid://delxyxsncrxkk"]
+
+[ext_resource type="PackedScene" uid="uid://dyf12t7n04ak4" path="res://table.tscn" id="1_viryw"]
+[ext_resource type="Texture2D" uid="uid://b8i41tlx64q6n" path="res://Assets/fnfSprites.png" id="2_e7rdd"]
+[ext_resource type="Script" uid="uid://bgfcb2qbq74dh" path="res://node.gd" id="3_blqjs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blqjs"]
+atlas = ExtResource("2_e7rdd")
+region = Rect2(9, 113, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgaav"]
+atlas = ExtResource("2_e7rdd")
+region = Rect2(160, 113, 150, 150)
+
+[node name="shop" type="Node"]
+
+[node name="table" parent="." instance=ExtResource("1_viryw")]
+
+[node name="pan" type="TextureButton" parent="."]
+offset_left = 567.0
+offset_top = 522.0
+offset_right = 717.0
+offset_bottom = 672.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="TavaManager" type="Node" parent="pan"]
+
+[node name="Puriyaan" type="TextureButton" parent="."]
+offset_left = 1017.0
+offset_top = 439.0
+offset_right = 1167.0
+offset_bottom = 589.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="kachchiTikkiyaan" type="TextureButton" parent="."]
+offset_left = 1153.0
+offset_top = 439.0
+offset_right = 1303.0
+offset_bottom = 589.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="AlooMatar" type="TextureButton" parent="."]
+offset_left = 1225.0
+offset_top = 566.0
+offset_right = 1375.0
+offset_bottom = 716.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="redPaani" type="TextureButton" parent="."]
+offset_left = 840.0
+offset_top = 466.0
+offset_right = 990.0
+offset_bottom = 616.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="GreenPani" type="TextureButton" parent="."]
+offset_left = 848.0
+offset_top = 559.0
+offset_right = 998.0
+offset_bottom = 709.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="plates" type="TextureButton" parent="."]
+offset_left = 891.0
+offset_top = 716.0
+offset_right = 1041.0
+offset_bottom = 866.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="Masala" type="TextureButton" parent="."]
+offset_left = 1162.0
+offset_top = 671.0
+offset_right = 1312.0
+offset_bottom = 821.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="Chutney" type="TextureButton" parent="."]
+offset_left = 1031.0
+offset_top = 683.0
+offset_right = 1181.0
+offset_bottom = 833.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="Dahi" type="TextureButton" parent="."]
+offset_left = 1034.0
+offset_top = 577.0
+offset_right = 1184.0
+offset_bottom = 727.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="Dustbin" type="TextureButton" parent="."]
+offset_left = 241.0
+offset_top = 386.0
+offset_right = 391.0
+offset_bottom = 536.0
+texture_normal = SubResource("AtlasTexture_blqjs")
+texture_hover = SubResource("AtlasTexture_fgaav")
+
+[node name="InHandItemManager" type="Node" parent="."]
+script = ExtResource("3_blqjs")
+
+[connection signal="pressed" from="pan" to="InHandItemManager" method="_on_pan_pressed"]
+[connection signal="pressed" from="Puriyaan" to="InHandItemManager" method="_on_puriyaan_pressed"]
+[connection signal="pressed" from="kachchiTikkiyaan" to="InHandItemManager" method="_on_kachchi_tikkiyaan_pressed"]
+[connection signal="pressed" from="AlooMatar" to="InHandItemManager" method="_on_aloo_matar_pressed"]
+[connection signal="pressed" from="redPaani" to="InHandItemManager" method="_on_red_paani_pressed"]
+[connection signal="pressed" from="GreenPani" to="InHandItemManager" method="_on_green_pani_pressed"]
+[connection signal="pressed" from="plates" to="InHandItemManager" method="_on_plates_pressed"]
+[connection signal="pressed" from="Masala" to="InHandItemManager" method="_on_masala_pressed"]
+[connection signal="pressed" from="Chutney" to="InHandItemManager" method="_on_chutney_pressed"]
+[connection signal="pressed" from="Dahi" to="InHandItemManager" method="_on_dahi_pressed"]
+[connection signal="pressed" from="Dustbin" to="InHandItemManager" method="_on_dustbin_pressed"]

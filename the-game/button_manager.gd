@@ -4,7 +4,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
+signal pattern_pressed
 var buttonState = 0
 var buttonPressed = -1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,8 +36,11 @@ func _process(delta: float) -> void:
 			match buttonPressed:
 				3:
 					buttonState = 3
+					pattern_pressed.emit()
 				_:
 					buttonState = 0
+
+	#print("Button State : ", buttonState)
 	pass
 
 
@@ -53,4 +56,9 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_3_pressed() -> void:
 	buttonPressed = 3
+	pass # Replace with function body.
+
+
+func _on_pattern_pressed() -> void:
+	print("Pattern Completed!")
 	pass # Replace with function body.
