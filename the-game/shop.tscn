@@ -1,8 +1,59 @@
-[gd_scene load_steps=6 format=3 uid="uid://delxyxsncrxkk"]
+[gd_scene load_steps=58 format=3 uid="uid://delxyxsncrxkk"]
 
+[ext_resource type="Script" uid="uid://dk40yupids4nm" path="res://shop.gd" id="1_aixl6"]
 [ext_resource type="PackedScene" uid="uid://dyf12t7n04ak4" path="res://table.tscn" id="1_viryw"]
+[ext_resource type="Texture2D" uid="uid://d2gka8m3u6mo1" path="res://Assets/theli_mod.png" id="2_8kdgp"]
 [ext_resource type="Texture2D" uid="uid://b8i41tlx64q6n" path="res://Assets/fnfSprites.png" id="2_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://co5abo2fs4mdc" path="res://Assets/InHandSprites/PuriSprite.png" id="2_nxxc5"]
+[ext_resource type="Texture2D" uid="uid://2yj3lxcvlond" path="res://Assets/InHandSprites/emptySprite.png" id="2_s4e2r"]
+[ext_resource type="Texture2D" uid="uid://cmfa2kkqvdhv0" path="res://Assets/chutney.png" id="3_6lah5"]
+[ext_resource type="Texture2D" uid="uid://cyxetyxkfgixq" path="res://Assets/tava.png" id="3_763b7"]
 [ext_resource type="Script" uid="uid://bgfcb2qbq74dh" path="res://node.gd" id="3_blqjs"]
+[ext_resource type="Texture2D" uid="uid://c2c2u22hbqrrs" path="res://Assets/InHandSprites/AlooPuriSprite.png" id="3_s4e2r"]
+[ext_resource type="Texture2D" uid="uid://bdud0ki8sg31e" path="res://Assets/chutney_hover.png" id="4_8kdgp"]
+[ext_resource type="Texture2D" uid="uid://dholy47b6faip" path="res://Assets/InHandSprites/RWPuriSprite.png" id="4_bke4b"]
+[ext_resource type="Texture2D" uid="uid://o3tjhcsdg73h" path="res://Assets/green.png" id="4_e23gp"]
+[ext_resource type="BitMap" uid="uid://nakhw0as1h3w" path="res://Assets/chutneyBmap.png" id="4_gmb2m"]
+[ext_resource type="Texture2D" uid="uid://bbwvwu1jxyeog" path="res://Assets/tava_hover.png" id="4_jtxfs"]
+[ext_resource type="Texture2D" uid="uid://bs7ep0mw0qi7b" path="res://Assets/InHandSprites/GWPuriSprite.png" id="5_4fhph"]
+[ext_resource type="Texture2D" uid="uid://bympj0unn8b33" path="res://Assets/green_hover.png" id="5_rrolr"]
+[ext_resource type="BitMap" uid="uid://dqiotbgmegb2n" path="res://Assets/tavaBmap.png" id="5_tuxin"]
+[ext_resource type="BitMap" uid="uid://boeqxps0fknos" path="res://Assets/greenBmap.png" id="6_gldgk"]
+[ext_resource type="Texture2D" uid="uid://blqw2abh2143c" path="res://Assets/puchka.png" id="6_k3iel"]
+[ext_resource type="Texture2D" uid="uid://b1ssrokv1akb8" path="res://Assets/InHandSprites/RPPSprite.png" id="6_v6a7d"]
+[ext_resource type="Texture2D" uid="uid://cwnauk4qduny3" path="res://Assets/puchka_hover.png" id="7_2807j"]
+[ext_resource type="Texture2D" uid="uid://d4bbr5cokglnm" path="res://Assets/InHandSprites/GPPSprite.png" id="7_vhut5"]
+[ext_resource type="Texture2D" uid="uid://c6dhfdcrxku8v" path="res://Assets/dahi.png" id="7_xqmyw"]
+[ext_resource type="Texture2D" uid="uid://ds2frredhctvo" path="res://Assets/dahi_hover.png" id="8_sw5c6"]
+[ext_resource type="Texture2D" uid="uid://ipntmyq2s1ri" path="res://Assets/InHandSprites/DonaSprite.png" id="8_sxc6c"]
+[ext_resource type="BitMap" uid="uid://b30pefkdn2tc2" path="res://Assets/puchkaBmap.png" id="8_u7exk"]
+[ext_resource type="Texture2D" uid="uid://ey1jyu881y6r" path="res://Assets/InHandSprites/DikkiTonaSprite.png" id="9_5obn0"]
+[ext_resource type="Texture2D" uid="uid://cdpb0sbbklmn4" path="res://Assets/tikki.png" id="9_db3q1"]
+[ext_resource type="BitMap" uid="uid://4wgj16ha1qce" path="res://Assets/dahiBmap.png" id="9_msgp6"]
+[ext_resource type="Texture2D" uid="uid://v5crmavef6dx" path="res://Assets/tikki_hover.png" id="10_8f8xc"]
+[ext_resource type="Texture2D" uid="uid://cv1s2ag5uaico" path="res://Assets/InHandSprites/DahiTikkiSprite.png" id="10_o5siu"]
+[ext_resource type="BitMap" uid="uid://dlxs1kfkfmvsf" path="res://Assets/tikkiBmap.png" id="11_g4q3a"]
+[ext_resource type="Texture2D" uid="uid://bk1g1hk3qy33k" path="res://Assets/InHandSprites/DahiChutneyTikkiSprite.png" id="11_qdnt6"]
+[ext_resource type="Texture2D" uid="uid://bg5jiwk8qpw5v" path="res://Assets/InHandSprites/TikkiChutneySprite.png" id="12_bg6fk"]
+[ext_resource type="Texture2D" uid="uid://oqsvpt7cdt5s" path="res://Assets/ThelaItems/aloo.png" id="12_bv3hj"]
+[ext_resource type="Texture2D" uid="uid://bi0t8f6ij3h5v" path="res://Assets/InHandSprites/AlooTikkiSprite.png" id="13_kv68x"]
+[ext_resource type="Texture2D" uid="uid://dn5prl3podv57" path="res://Assets/ThelaItems/alooHov.png" id="13_lccd8"]
+[ext_resource type="BitMap" uid="uid://7jjxudup4gy" path="res://Assets/ThelaItems/alooBmap.png" id="14_ckaty"]
+[ext_resource type="Texture2D" uid="uid://iupsxgq4wlno" path="res://Assets/InHandSprites/TikkiCompleteSprite.png" id="14_w8sd8"]
+[ext_resource type="Texture2D" uid="uid://drg50jlmk85w1" path="res://Assets/ThelaItems/laalJaljeera.png" id="15_bnjor"]
+[ext_resource type="Texture2D" uid="uid://gf5krk2w5hcd" path="res://Assets/InHandSprites/KachchiTikkiSprite.png" id="15_gyssc"]
+[ext_resource type="Texture2D" uid="uid://bnxk5mk8wkcik" path="res://Assets/ThelaItems/laalJaljeeraHov.png" id="16_m1vja"]
+[ext_resource type="Texture2D" uid="uid://b567lruh71ifb" path="res://Assets/masala.png" id="16_u7exk"]
+[ext_resource type="Texture2D" uid="uid://cvtgetvbou6bu" path="res://Assets/masala_hover.png" id="17_8f8xc"]
+[ext_resource type="BitMap" uid="uid://d317hqrrnu3xe" path="res://Assets/ThelaItems/laalJaljeeraBmap.png" id="17_aixl6"]
+[ext_resource type="BitMap" uid="uid://b36wrke4jsnon" path="res://Assets/masalaBmap.png" id="17_db3q1"]
+[ext_resource type="Texture2D" uid="uid://nrgdc6epnf5n" path="res://Assets/ThelaItems/Done.png" id="19_ugyvi"]
+[ext_resource type="Texture2D" uid="uid://bju5oj4daf6cl" path="res://Assets/ThelaItems/DoneHov.png" id="20_kdli5"]
+[ext_resource type="BitMap" uid="uid://qfxwkf21xjhc" path="res://Assets/ThelaItems/DoneBmap.png" id="21_ebk4j"]
+[ext_resource type="Script" uid="uid://cqvd2n0fgyoue" path="res://tava_manager.gd" id="22_4fhph"]
+[ext_resource type="Texture2D" uid="uid://cj2j3sws7wuno" path="res://Assets/InHandSprites/PakkiTikkiSprite.png" id="22_bke4b"]
+[ext_resource type="Texture2D" uid="uid://creeq8nx3ldbp" path="res://Assets/inHand.png" id="36_3fyhu"]
+[ext_resource type="Texture2D" uid="uid://biis6301ltqv4" path="res://Assets/InHandSprites/mark_batsu.png" id="51_nfljo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blqjs"]
 atlas = ExtResource("2_e7rdd")
@@ -12,91 +63,113 @@ region = Rect2(9, 113, 150, 150)
 atlas = ExtResource("2_e7rdd")
 region = Rect2(160, 113, 150, 150)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fyhu"]
+atlas = ExtResource("2_e7rdd")
+region = Rect2(315.59595, 961.83356, 145.80545, 128.63129)
+
 [node name="shop" type="Node"]
+script = ExtResource("1_aixl6")
+InHandTextures = Array[Texture2D]([ExtResource("2_s4e2r"), ExtResource("2_nxxc5"), ExtResource("3_s4e2r"), ExtResource("4_bke4b"), ExtResource("5_4fhph"), ExtResource("6_v6a7d"), ExtResource("7_vhut5"), ExtResource("8_sxc6c"), ExtResource("9_5obn0"), ExtResource("10_o5siu"), ExtResource("11_qdnt6"), ExtResource("12_bg6fk"), ExtResource("13_kv68x"), ExtResource("14_w8sd8"), null, ExtResource("15_gyssc")])
 
 [node name="table" parent="." instance=ExtResource("1_viryw")]
+texture = ExtResource("2_8kdgp")
 
 [node name="pan" type="TextureButton" parent="."]
-offset_left = 567.0
-offset_top = 522.0
-offset_right = 717.0
-offset_bottom = 672.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("3_763b7")
+texture_hover = ExtResource("4_jtxfs")
+texture_click_mask = ExtResource("5_tuxin")
 
 [node name="TavaManager" type="Node" parent="pan"]
+script = ExtResource("22_4fhph")
+
+[node name="tikki" type="Sprite2D" parent="pan/TavaManager"]
+visible = false
+position = Vector2(391, 693.6)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("22_bke4b")
+
+[node name="chikki" type="Sprite2D" parent="pan/TavaManager"]
+visible = false
+position = Vector2(333.145, 767.455)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("22_bke4b")
+
+[node name="rikki" type="Sprite2D" parent="pan/TavaManager"]
+visible = false
+position = Vector2(535.18, 693.6)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("22_bke4b")
+
+[node name="nikki" type="Sprite2D" parent="pan/TavaManager"]
+visible = false
+position = Vector2(494.52, 772.35)
+scale = Vector2(0.17245375, 0.17245376)
+texture = ExtResource("22_bke4b")
 
 [node name="Puriyaan" type="TextureButton" parent="."]
-offset_left = 1017.0
-offset_top = 439.0
-offset_right = 1167.0
-offset_bottom = 589.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("6_k3iel")
+texture_hover = ExtResource("7_2807j")
+texture_click_mask = ExtResource("8_u7exk")
 
 [node name="kachchiTikkiyaan" type="TextureButton" parent="."]
-offset_left = 1153.0
-offset_top = 439.0
-offset_right = 1303.0
-offset_bottom = 589.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("9_db3q1")
+texture_hover = ExtResource("10_8f8xc")
+texture_click_mask = ExtResource("11_g4q3a")
 
 [node name="AlooMatar" type="TextureButton" parent="."]
-offset_left = 1225.0
-offset_top = 566.0
-offset_right = 1375.0
-offset_bottom = 716.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("12_bv3hj")
+texture_hover = ExtResource("13_lccd8")
+texture_click_mask = ExtResource("14_ckaty")
 
 [node name="redPaani" type="TextureButton" parent="."]
-offset_left = 840.0
-offset_top = 466.0
-offset_right = 990.0
-offset_bottom = 616.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("15_bnjor")
+texture_hover = ExtResource("16_m1vja")
+texture_click_mask = ExtResource("17_aixl6")
 
 [node name="GreenPani" type="TextureButton" parent="."]
-offset_left = 848.0
-offset_top = 559.0
-offset_right = 998.0
-offset_bottom = 709.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("4_e23gp")
+texture_hover = ExtResource("5_rrolr")
+texture_click_mask = ExtResource("6_gldgk")
 
 [node name="plates" type="TextureButton" parent="."]
-offset_left = 891.0
-offset_top = 716.0
-offset_right = 1041.0
-offset_bottom = 866.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("19_ugyvi")
+texture_hover = ExtResource("20_kdli5")
+texture_click_mask = ExtResource("21_ebk4j")
 
 [node name="Masala" type="TextureButton" parent="."]
-offset_left = 1162.0
-offset_top = 671.0
-offset_right = 1312.0
-offset_bottom = 821.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("16_u7exk")
+texture_hover = ExtResource("17_8f8xc")
+texture_click_mask = ExtResource("17_db3q1")
 
 [node name="Chutney" type="TextureButton" parent="."]
-offset_left = 1031.0
-offset_top = 683.0
-offset_right = 1181.0
-offset_bottom = 833.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("3_6lah5")
+texture_hover = ExtResource("4_8kdgp")
+texture_click_mask = ExtResource("4_gmb2m")
 
 [node name="Dahi" type="TextureButton" parent="."]
-offset_left = 1034.0
-offset_top = 577.0
-offset_right = 1184.0
-offset_bottom = 727.0
-texture_normal = SubResource("AtlasTexture_blqjs")
-texture_hover = SubResource("AtlasTexture_fgaav")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("7_xqmyw")
+texture_hover = ExtResource("8_sw5c6")
+texture_click_mask = ExtResource("9_msgp6")
 
 [node name="Dustbin" type="TextureButton" parent="."]
 offset_left = 241.0
@@ -109,6 +182,29 @@ texture_hover = SubResource("AtlasTexture_fgaav")
 [node name="InHandItemManager" type="Node" parent="."]
 script = ExtResource("3_blqjs")
 
+[node name="InHand" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(577.99994, 675)
+scale = Vector2(1.474629, 1.4746287)
+texture = ExtResource("36_3fyhu")
+
+[node name="Item" type="Sprite2D" parent="InHand"]
+position = Vector2(77, -134)
+scale = Vector2(0.35, 0.35)
+
+[node name="Garbage" type="Sprite2D" parent="InHand"]
+visible = false
+position = Vector2(81.37643, -109.85818)
+scale = Vector2(0.47218415, 0.47218415)
+texture = ExtResource("51_nfljo")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1745.0
+offset_top = 370.0
+offset_right = 1890.0
+offset_bottom = 498.0
+texture_normal = SubResource("AtlasTexture_3fyhu")
+
 [connection signal="pressed" from="pan" to="InHandItemManager" method="_on_pan_pressed"]
 [connection signal="pressed" from="Puriyaan" to="InHandItemManager" method="_on_puriyaan_pressed"]
 [connection signal="pressed" from="kachchiTikkiyaan" to="InHandItemManager" method="_on_kachchi_tikkiyaan_pressed"]
@@ -120,3 +216,5 @@ script = ExtResource("3_blqjs")
 [connection signal="pressed" from="Chutney" to="InHandItemManager" method="_on_chutney_pressed"]
 [connection signal="pressed" from="Dahi" to="InHandItemManager" method="_on_dahi_pressed"]
 [connection signal="pressed" from="Dustbin" to="InHandItemManager" method="_on_dustbin_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]

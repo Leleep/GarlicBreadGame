@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dlxs1kfkfmvsf"
+path="res://.godot/imported/tikkiBmap.png-3dad091c0c763acf2c348de38b3f04d1.res"
+
+[deps]
+
+source_file="res://Assets/tikkiBmap.png"
+dest_files=["res://.godot/imported/tikkiBmap.png-3dad091c0c763acf2c348de38b3f04d1.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

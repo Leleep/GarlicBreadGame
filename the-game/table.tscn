@@ -1,21 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyf12t7n04ak4"]
+[gd_scene load_steps=2 format=3 uid="uid://dyf12t7n04ak4"]
 
-[ext_resource type="Texture2D" uid="uid://p50ik67x4iml" path="res://Assets/tableTemporary.png" id="1_jd0nb"]
+[ext_resource type="Texture2D" uid="uid://7u37lfauow47" path="res://Assets/Main_theli.png" id="1_jd0nb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v5i0k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_jd0nb")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[node name="table" type="Area2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(985, 845)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_v5i0k")
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(960, 540)
+texture = ExtResource("1_jd0nb")

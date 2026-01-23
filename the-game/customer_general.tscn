@@ -1,0 +1,52 @@
+[gd_scene load_steps=19 format=3 uid="uid://db7fq0dpk48oo"]
+
+[ext_resource type="Texture2D" uid="uid://dsbfmjo3ad5s7" path="res://Assets/customer1.png" id="1_fskrt"]
+[ext_resource type="Texture2D" uid="uid://b18vb3txpa5uo" path="res://Assets/customer1_hover.png" id="2_aa2cx"]
+[ext_resource type="BitMap" uid="uid://b3cuhmhcra4rv" path="res://Assets/customer1Bitmap.png" id="3_7ukou"]
+[ext_resource type="Texture2D" uid="uid://y48k6e2o5o8n" path="res://Assets/customer3_fixed.png" id="4_fam48"]
+[ext_resource type="Script" uid="uid://b3rymf5fphids" path="res://customer.gd" id="4_r4dhu"]
+[ext_resource type="Texture2D" uid="uid://dprxl6blkhxyn" path="res://Assets/customer4_fixed.png" id="5_18a8x"]
+[ext_resource type="Texture2D" uid="uid://4says82xjrca" path="res://Assets/customer2.png" id="5_fam48"]
+[ext_resource type="Texture2D" uid="uid://dxp4oxqwj66n3" path="res://Assets/only_bubble.png" id="5_xyqgx"]
+[ext_resource type="Texture2D" uid="uid://bghqn3w1o2gr6" path="res://Assets/customer3_fixed_hover.png" id="8_fam48"]
+[ext_resource type="Texture2D" uid="uid://o3t4y5j82f43" path="res://Assets/customer2_hover.png" id="8_p11lr"]
+[ext_resource type="Texture2D" uid="uid://btsx5rrnvwgei" path="res://Assets/customer4_fixed_hover.png" id="9_fam48"]
+[ext_resource type="BitMap" uid="uid://c0gvc3herdh01" path="res://Assets/customer2Bmap.png" id="11_hgjam"]
+[ext_resource type="BitMap" uid="uid://31pc081qv886" path="res://Assets/customer3_fixedBmap.png" id="12_fam48"]
+[ext_resource type="BitMap" uid="uid://di8ckq6262fcv" path="res://Assets/customer4_fixedBmap.png" id="13_fam48"]
+[ext_resource type="Texture2D" uid="uid://cjwm8ywfsi8t5" path="res://Assets/puchka_new.png" id="15_18a8x"]
+[ext_resource type="Texture2D" uid="uid://ciydvwh64jicb" path="res://Assets/red_puchka_new.png" id="16_fmqxb"]
+[ext_resource type="Texture2D" uid="uid://clq6tpbstnehb" path="res://Assets/alooTikki_new.png" id="17_p11lr"]
+[ext_resource type="Texture2D" uid="uid://ipntmyq2s1ri" path="res://Assets/InHandSprites/DonaSprite.png" id="18_ad1qe"]
+
+[node name="Customer1" type="TextureButton"]
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 397.0
+offset_bottom = 564.0
+pivot_offset = Vector2(200, 283)
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_r4dhu")
+normal_textures = Array[Texture2D]([ExtResource("1_fskrt"), ExtResource("5_fam48"), ExtResource("4_fam48"), ExtResource("5_18a8x")])
+hover_textures = Array[Texture2D]([ExtResource("2_aa2cx"), ExtResource("8_p11lr"), ExtResource("8_fam48"), ExtResource("9_fam48")])
+click_masks = Array[BitMap]([ExtResource("3_7ukou"), ExtResource("11_hgjam"), ExtResource("12_fam48"), ExtResource("13_fam48")])
+dish_textures = Array[Texture2D]([ExtResource("17_p11lr"), ExtResource("15_18a8x"), ExtResource("16_fmqxb")])
+
+[node name="bubble1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(89.000015, 80.00001)
+rotation = -0.4537856
+scale = Vector2(0.74907786, 0.7490779)
+texture = ExtResource("5_xyqgx")
+
+[node name="Dish" type="Sprite2D" parent="bubble1"]
+position = Vector2(-4.188, -52.45)
+rotation = 0.4537856
+scale = Vector2(0.5, 0.5)
+
+[node name="Don" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(199.00002, 291)
+scale = Vector2(0.1314815, 0.13148147)
+texture = ExtResource("18_ad1qe")

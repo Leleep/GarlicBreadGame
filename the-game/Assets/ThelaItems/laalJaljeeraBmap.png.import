@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d317hqrrnu3xe"
+path="res://.godot/imported/laalJaljeeraBmap.png-50e762bf0a1595f3b55b589de583cb44.res"
+
+[deps]
+
+source_file="res://Assets/ThelaItems/laalJaljeeraBmap.png"
+dest_files=["res://.godot/imported/laalJaljeeraBmap.png-50e762bf0a1595f3b55b589de583cb44.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

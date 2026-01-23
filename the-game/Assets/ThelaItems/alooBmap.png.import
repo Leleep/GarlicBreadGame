@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://7jjxudup4gy"
+path="res://.godot/imported/alooBmap.png-fea10a1e07db988b3f7337799f930c78.res"
+
+[deps]
+
+source_file="res://Assets/ThelaItems/alooBmap.png"
+dest_files=["res://.godot/imported/alooBmap.png-fea10a1e07db988b3f7337799f930c78.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

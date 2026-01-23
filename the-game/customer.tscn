@@ -1,10 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://nqnqmuewlksr"]
+[gd_scene load_steps=3 format=3 uid="uid://nqnqmuewlksr"]
 
-[ext_resource type="Texture2D" uid="uid://dsbfmjo3ad5s7" path="res://Assets/customer1.png" id="1_7tiyv"]
-[ext_resource type="Script" uid="uid://b3rymf5fphids" path="res://customer.gd" id="1_r8ta2"]
-[ext_resource type="Texture2D" uid="uid://b18vb3txpa5uo" path="res://Assets/customer1_hover.png" id="2_r8ta2"]
-[ext_resource type="BitMap" uid="uid://b3cuhmhcra4rv" path="res://Assets/customer1Bitmap.png" id="3_f7asb"]
-[ext_resource type="Texture2D" uid="uid://dxp4oxqwj66n3" path="res://Assets/only_bubble.png" id="4_co351"]
+[ext_resource type="PackedScene" uid="uid://db7fq0dpk48oo" path="res://customer_general.tscn" id="2_aive0"]
 [ext_resource type="Script" uid="uid://crsj0ttsjvfti" path="res://customer_manager.gd" id="6_eas7q"]
 
 [node name="Customer" type="Control"]
@@ -15,28 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_eas7q")
+customer_scene = ExtResource("2_aive0")
 metadata/_edit_horizontal_guides_ = [281.0, -63.0]
 metadata/_edit_vertical_guides_ = [201.0]
-
-[node name="Customer1" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 3.0
-offset_top = -3.0
-offset_right = 397.0
-offset_bottom = 564.0
-pivot_offset = Vector2(200, 283)
-texture_normal = ExtResource("1_7tiyv")
-texture_hover = ExtResource("2_r8ta2")
-texture_click_mask = ExtResource("3_f7asb")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("1_r8ta2")
-
-[node name="bubble1" type="Sprite2D" parent="Customer1"]
-z_index = -1
-position = Vector2(89.000015, 80.00001)
-rotation = -0.4537856
-scale = Vector2(0.74907786, 0.7490779)
-texture = ExtResource("4_co351")
-
-[connection signal="pressed" from="Customer1" to="." method="_on_customer_1_pressed"]

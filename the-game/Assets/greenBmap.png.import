@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://boeqxps0fknos"
+path="res://.godot/imported/greenBmap.png-6ac73d58a5dc475320ec40f4fae7cead.res"
+
+[deps]
+
+source_file="res://Assets/greenBmap.png"
+dest_files=["res://.godot/imported/greenBmap.png-6ac73d58a5dc475320ec40f4fae7cead.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

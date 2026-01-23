@@ -1,0 +1,15 @@
+extends Node
+
+@onready var inhandnode = $shop/InHandItemManager
+@onready var customer = $Customer
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	inhandnode.inHandItemChanged.connect(_on_in_hand)
+	customer.success.connect(_on_success)
+
+func _on_in_hand(state):
+	customer.itemState_toCustomerChild(state)
+
+func _on_success():
+	inhandnode.succeeded()

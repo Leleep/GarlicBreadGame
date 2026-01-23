@@ -1,5 +1,7 @@
 extends Node
 var currentState : GlobalEnums.State = GlobalEnums.State.Empty
+signal inHandItemChanged(state)
+signal tikkiStatus(change)
 
 func updateState(item : GlobalEnums.Item):
 	match currentState:
@@ -18,6 +20,8 @@ func updateState(item : GlobalEnums.Item):
 			match item:
 				GlobalEnums.Item.Aloo:
 					currentState = GlobalEnums.State.AlooPuri
+				GlobalEnums.Item.Puri:
+					currentState = GlobalEnums.State.Empty
 				_:
 					currentState = GlobalEnums.State.Garbage
 		GlobalEnums.State.AlooPuri:
@@ -44,6 +48,8 @@ func updateState(item : GlobalEnums.Item):
 			match item:
 				GlobalEnums.Item.FriedTikki:
 					currentState = GlobalEnums.State.TikkiDona
+				GlobalEnums.Item.Dona:
+					currentState = GlobalEnums.State.Empty
 				_:
 					currentState = GlobalEnums.State.Garbage
 		GlobalEnums.State.TikkiDona:
@@ -85,10 +91,19 @@ func updateState(item : GlobalEnums.Item):
 		GlobalEnums.State.TikkiComplete:
 			currentState = GlobalEnums.State.Garbage
 		GlobalEnums.State.Tikki:
-			currentState = GlobalEnums.State.Garbage
+			match item:
+				GlobalEnums.Item.Tikki:
+					currentState = GlobalEnums.State.Empty
+				_:
+					currentState = GlobalEnums.State.Garbage
 		_:
 			print("Invalid state encountered")
 	print("State changed to", currentState)
+	inHandItemChanged.emit(currentState)
+
+func succeeded():
+	currentState=GlobalEnums.State.Empty
+	inHandItemChanged.emit(currentState)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -96,21 +111,24 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 var TikkiOnTava : int = 0
 
 func _on_pan_pressed() -> void:
-	if currentState == GlobalEnums.State.Tikki:
+	if currentState == GlobalEnums.State.Tikki and TikkiOnTava<4:
 		TikkiOnTava += 1
+		tikkiStatus.emit(0)
 		currentState = GlobalEnums.State.Empty
+		inHandItemChanged.emit(currentState)
 	elif currentState == GlobalEnums.State.Dona and TikkiOnTava > 0:
 		updateState(GlobalEnums.Item.FriedTikki)
 		TikkiOnTava -= 1
+		tikkiStatus.emit(1)
 	else :
 		print("Tava Not Applicable")
-	pass # Replace with function body.
+	
 
 
 func _on_plates_pressed() -> void:
@@ -159,3 +177,4 @@ func _on_chutney_pressed() -> void:
 func _on_dustbin_pressed() -> void:
 	currentState = GlobalEnums.State.Empty
 	print("Dustbin used. Current GlobalEnums.State is ", currentState)
+	inHandItemChanged.emit(currentState)
