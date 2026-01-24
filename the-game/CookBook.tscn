@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8q7dhyhusgnm"]
+
+[ext_resource type="Texture2D" uid="uid://b8i41tlx64q6n" path="res://Assets/fnfSprites.png" id="1_03dyi"]
+[ext_resource type="Script" uid="uid://6eb04hq5gwgs" path="res://cook_book.gd" id="1_afwdq"]
+[ext_resource type="Texture2D" uid="uid://cx573uree0ctv" path="res://Assets/CookBook/1.png" id="2_nl42x"]
+[ext_resource type="Texture2D" uid="uid://dqip6p1dbmx38" path="res://Assets/CookBook/2.png" id="3_03dyi"]
+[ext_resource type="Texture2D" uid="uid://c1v5nwor3eudc" path="res://Assets/CookBook/3.png" id="4_siyqg"]
+[ext_resource type="Texture2D" uid="uid://cutf36gs8mibi" path="res://Assets/CookBook/arrow.png" id="6_0lm0m"]
+[ext_resource type="BitMap" uid="uid://cnf5akpsr4m23" path="res://Assets/CookBook/arrowBitmap.png" id="7_qrjf6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siyqg"]
+atlas = ExtResource("1_03dyi")
+region = Rect2(314.0848, 283.08325, 149.85593, 149.90622)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03dyi"]
+atlas = ExtResource("1_03dyi")
+region = Rect2(465.90778, 283.46768, 149.58008, 148.21402)
+
+[node name="Button" type="TextureButton"]
+offset_left = 85.0
+offset_top = 53.0
+offset_right = 234.0
+offset_bottom = 202.0
+texture_normal = SubResource("AtlasTexture_siyqg")
+texture_hover = SubResource("AtlasTexture_03dyi")
+script = ExtResource("1_afwdq")
+bookTexture = Array[Texture2D]([ExtResource("2_nl42x"), ExtResource("3_03dyi"), ExtResource("4_siyqg")])
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(451, 12.000002)
+scale = Vector2(0.7680555, 0.7680555)
+texture = ExtResource("2_nl42x")
+
+[node name="PrevPageButton" type="TextureButton" parent="Book"]
+offset_left = -269.51178
+offset_top = 451.79025
+offset_right = -137.58075
+offset_bottom = 589.54175
+rotation = -1.7553089
+texture_normal = ExtResource("6_0lm0m")
+texture_click_mask = ExtResource("7_qrjf6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="NextPageButton" type="TextureButton" parent="Book"]
+offset_left = 459.6022
+offset_top = 208.31825
+offset_right = 591.5332
+offset_bottom = 346.0697
+rotation = -4.889764
+texture_normal = ExtResource("6_0lm0m")
+texture_click_mask = ExtResource("7_qrjf6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="Book/PrevPageButton" to="." method="_on_prev_page_button_pressed"]
+[connection signal="pressed" from="Book/NextPageButton" to="." method="_on_next_page_button_pressed"]
