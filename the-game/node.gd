@@ -182,7 +182,7 @@ func _on_chutney_pressed() -> void:
 	updateState(GlobalEnums.Item.Chutney)
 	click.play()
 
-
+# Korewa Comment desu
 func _on_dustbin_pressed() -> void:
 	if currentState == GlobalEnums.State.Empty : click.play()
 	else : dump.play()
