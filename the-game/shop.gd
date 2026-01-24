@@ -24,3 +24,7 @@ func forward_to_tava(change):
 
 func _on_texture_button_mouse_exited() -> void:
 	$InHand.visible=false
+
+
+func _on_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://loading_screen.tscn")

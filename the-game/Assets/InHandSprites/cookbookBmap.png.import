@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://btcygb4x8p62r"
+path="res://.godot/imported/cookbookBmap.png-764f34f11ee82db95bdf69ca7d9512cd.res"
+
+[deps]
+
+source_file="res://Assets/InHandSprites/cookbookBmap.png"
+dest_files=["res://.godot/imported/cookbookBmap.png-764f34f11ee82db95bdf69ca7d9512cd.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

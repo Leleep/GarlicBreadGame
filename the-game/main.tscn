@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c55dwhb62058h"]
+[gd_scene load_steps=5 format=3 uid="uid://c55dwhb62058h"]
 
 [ext_resource type="PackedScene" uid="uid://nqnqmuewlksr" path="res://customer.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://xdwy7g32jgfv" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://delxyxsncrxkk" path="res://shop.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://ruun8u541dyx" path="res://Assets/InHandSprites/bg.png" id="4_1bvp3"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
@@ -10,3 +11,10 @@ script = ExtResource("1_h2yge")
 [node name="Customer" parent="." instance=ExtResource("1_0xm2m")]
 
 [node name="shop" parent="." instance=ExtResource("2_0xm2m")]
+
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(0.66245234, 0.66245234, 0.6624523, 1)
+z_index = -2
+position = Vector2(966, 412)
+scale = Vector2(0.7532484, 0.7532484)
+texture = ExtResource("4_1bvp3")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://n61l4yf0ve5w"
+path="res://.godot/imported/eye_normalBmap.png-663c4b7c84ce4f1240fcb03be3152fe7.res"
+
+[deps]
+
+source_file="res://Assets/InHandSprites/eye_normalBmap.png"
+dest_files=["res://.godot/imported/eye_normalBmap.png-663c4b7c84ce4f1240fcb03be3152fe7.res"]
+
+[params]
+
+create_from=1
+threshold=0.5
