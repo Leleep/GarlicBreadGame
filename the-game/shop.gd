@@ -1,6 +1,7 @@
 extends Node
 
 @export var InHandTextures: Array[Texture2D]
+@onready var wooshSound := $wooshSound
 
 func _ready() -> void:
 	$InHandItemManager.inHandItemChanged.connect(change_texture_hand)
@@ -17,6 +18,7 @@ func change_texture_hand(state):
 
 func _on_texture_button_mouse_entered() -> void:
 	$InHand.visible=true
+	wooshSound.play()
 
 
 func forward_to_tava(change):

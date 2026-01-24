@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://delxyxsncrxkk"]
+[gd_scene load_steps=64 format=3 uid="uid://delxyxsncrxkk"]
 
 [ext_resource type="Script" uid="uid://dk40yupids4nm" path="res://shop.gd" id="1_aixl6"]
 [ext_resource type="PackedScene" uid="uid://dyf12t7n04ak4" path="res://table.tscn" id="1_viryw"]
@@ -54,6 +54,12 @@
 [ext_resource type="Texture2D" uid="uid://cj2j3sws7wuno" path="res://Assets/InHandSprites/PakkiTikkiSprite.png" id="22_bke4b"]
 [ext_resource type="Texture2D" uid="uid://creeq8nx3ldbp" path="res://Assets/inHand.png" id="36_3fyhu"]
 [ext_resource type="Texture2D" uid="uid://biis6301ltqv4" path="res://Assets/InHandSprites/mark_batsu.png" id="51_nfljo"]
+[ext_resource type="AudioStream" uid="uid://b36xb2v556sab" path="res://Assets/audio/turd.mp3" id="53_vhut5"]
+[ext_resource type="PackedScene" uid="uid://0wffc0iytbox" path="res://click_sound.tscn" id="54_sxc6c"]
+[ext_resource type="AudioStream" uid="uid://dg7tkskmen4q7" path="res://Assets/audio/dumpSound.mp3" id="55_5obn0"]
+[ext_resource type="AudioStream" uid="uid://cd1jqpdtms0me" path="res://Assets/audio/steve-old-hurt-sound_XKZxUk4.mp3" id="55_v6a7d"]
+[ext_resource type="AudioStream" uid="uid://ca48a17l82hx7" path="res://Assets/audio/frying-steak-74556.mp3" id="56_o5siu"]
+[ext_resource type="AudioStream" uid="uid://blnw2php0ju84" path="res://Assets/audio/woosh.mp3" id="57_sxc6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blqjs"]
 atlas = ExtResource("2_e7rdd")
@@ -182,6 +188,21 @@ texture_hover = SubResource("AtlasTexture_fgaav")
 [node name="InHandItemManager" type="Node" parent="."]
 script = ExtResource("3_blqjs")
 
+[node name="turdSound" type="AudioStreamPlayer2D" parent="InHandItemManager"]
+stream = ExtResource("53_vhut5")
+
+[node name="clickSound" parent="InHandItemManager" instance=ExtResource("54_sxc6c")]
+
+[node name="dumpSound" type="AudioStreamPlayer2D" parent="InHandItemManager"]
+stream = ExtResource("55_5obn0")
+
+[node name="fryingSound" type="AudioStreamPlayer2D" parent="InHandItemManager"]
+stream = ExtResource("56_o5siu")
+volume_db = 1.368
+
+[node name="hurtSound" type="AudioStreamPlayer2D" parent="InHandItemManager"]
+stream = ExtResource("55_v6a7d")
+
 [node name="InHand" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(577.99994, 675)
@@ -204,6 +225,9 @@ offset_top = 370.0
 offset_right = 1890.0
 offset_bottom = 498.0
 texture_normal = SubResource("AtlasTexture_3fyhu")
+
+[node name="wooshSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("57_sxc6c")
 
 [connection signal="pressed" from="pan" to="InHandItemManager" method="_on_pan_pressed"]
 [connection signal="pressed" from="Puriyaan" to="InHandItemManager" method="_on_puriyaan_pressed"]

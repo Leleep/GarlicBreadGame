@@ -1,5 +1,7 @@
 extends Node
 var currentState : GlobalEnums.State = GlobalEnums.State.Empty
+@onready var click := $clickSound
+@onready var dump := $dumpSound
 signal inHandItemChanged(state)
 signal tikkiStatus(change)
 
@@ -100,6 +102,8 @@ func updateState(item : GlobalEnums.Item):
 			print("Invalid state encountered")
 	print("State changed to", currentState)
 	inHandItemChanged.emit(currentState)
+	#if currentState == GlobalEnums.State.Garbage:
+		#$turdSound.play()
 
 func succeeded():
 	currentState=GlobalEnums.State.Empty
@@ -118,6 +122,7 @@ var TikkiOnTava : int = 0
 
 func _on_pan_pressed() -> void:
 	if currentState == GlobalEnums.State.Tikki and TikkiOnTava<4:
+		$fryingSound.play()
 		TikkiOnTava += 1
 		tikkiStatus.emit(0)
 		currentState = GlobalEnums.State.Empty
@@ -126,55 +131,61 @@ func _on_pan_pressed() -> void:
 		updateState(GlobalEnums.Item.FriedTikki)
 		TikkiOnTava -= 1
 		tikkiStatus.emit(1)
+		click.play()
 	else :
 		print("Tava Not Applicable")
+		$hurtSound.play()
 	
 
 
 func _on_plates_pressed() -> void:
 	updateState(GlobalEnums.Item.Dona)
-	pass # Replace with function body.
+	click.play()
 
 
 func _on_red_paani_pressed() -> void:
 	updateState(GlobalEnums.Item.RedPaani)
-	pass # Replace with function body.
+	click.play()
 
 
 func _on_green_pani_pressed() -> void:
 	updateState(GlobalEnums.Item.GreenPaani)
-	pass # Replace with function body.
+	click.play()
 
 
 func _on_puriyaan_pressed() -> void:
 	updateState(GlobalEnums.Item.Puri)
-	pass # Replace with function body.
+	click.play()
 
 
 func _on_masala_pressed() -> void:
 	updateState(GlobalEnums.Item.Masala)
-	pass # Replace with function body.
+	click.play()
 
 
 func _on_kachchi_tikkiyaan_pressed() -> void:
 	updateState(GlobalEnums.Item.Tikki)
-	pass # Replace with function body.
+	click.play()
 
 
 func _on_aloo_matar_pressed() -> void:
 	updateState(GlobalEnums.Item.Aloo)
-	pass # Replace with function body.
+	click.play()
 
 
 func _on_dahi_pressed() -> void:
 	updateState(GlobalEnums.Item.Dahi)
+	click.play()
 
 
 func _on_chutney_pressed() -> void:
 	updateState(GlobalEnums.Item.Chutney)
+	click.play()
 
 
 func _on_dustbin_pressed() -> void:
+	if currentState == GlobalEnums.State.Empty : click.play()
+	else : dump.play()
 	currentState = GlobalEnums.State.Empty
 	print("Dustbin used. Current GlobalEnums.State is ", currentState)
 	inHandItemChanged.emit(currentState)

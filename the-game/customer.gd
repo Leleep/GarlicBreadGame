@@ -60,6 +60,7 @@ func _on_pressed() -> void:
 	left_slot.emit(slot_idx, curr_dish)
 
 func go():
+	$kachingSound.play()
 	$Don.visible=false
 	$bubble1.hide()
 	var tween = create_tween()
