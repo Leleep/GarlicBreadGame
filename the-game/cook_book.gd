@@ -23,7 +23,8 @@ func _on_pressed() -> void:
 func flip_pages(pageFlipBy : int):
 	pageNumberOpened += pageFlipBy
 	if (pageNumberOpened < 0) : pageNumberOpened = 0
-	if (pageNumberOpened > 2) : pageNumberOpened = 2
+	elif (pageNumberOpened > 2) : pageNumberOpened = 2
+	else : $Book/pageFlipSound.play()
 	$Book.texture = bookTexture[pageNumberOpened]
 
 func _on_prev_page_button_pressed() -> void:

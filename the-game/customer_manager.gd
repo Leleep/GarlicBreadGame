@@ -41,11 +41,15 @@ func _on_left_slot(slot_index, cust_dish):
 				cust_pos[slot_index]=0
 			else:
 				print("wrong dish, make correct fool")
+				$hurtSound.play()
 		else:
 			if cust_item==GlobalEnums.State.Dona:
 				customer_instances[slot_index].hasDona = true
 				customer_instances[slot_index].get_node("Don").visible=true
 				success.emit()
+			else:
+				# Something else insteaed of Dona given to the customer
+				$hurtSound.play()
 	else:
 		if cust_item == cust_dish:
 			success.emit()
@@ -54,3 +58,4 @@ func _on_left_slot(slot_index, cust_dish):
 			cust_pos[slot_index]=0
 		else:
 			print("wrong dish, make correct fool")
+			$hurtSound.play()

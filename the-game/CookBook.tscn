@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8q7dhyhusgnm"]
+[gd_scene load_steps=11 format=3 uid="uid://c8q7dhyhusgnm"]
 
 [ext_resource type="Texture2D" uid="uid://drsn2wnk0o0sn" path="res://Assets/InHandSprites/cookbook.png" id="1_0lm0m"]
 [ext_resource type="Script" path="res://cook_book.gd" id="1_afwdq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c1v5nwor3eudc" path="res://Assets/CookBook/3.png" id="4_siyqg"]
 [ext_resource type="Texture2D" uid="uid://cutf36gs8mibi" path="res://Assets/CookBook/arrow.png" id="6_0lm0m"]
 [ext_resource type="BitMap" uid="uid://cnf5akpsr4m23" path="res://Assets/CookBook/arrowBitmap.png" id="7_qrjf6"]
+[ext_resource type="AudioStream" uid="uid://cop85r2axeagu" path="res://Assets/audio/pageturn.mp3" id="8_qrjf6"]
 
 [node name="Button" type="TextureButton"]
 offset_left = 1753.0
@@ -50,6 +51,9 @@ texture_normal = ExtResource("6_0lm0m")
 texture_click_mask = ExtResource("7_qrjf6")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="pageFlipSound" type="AudioStreamPlayer2D" parent="Book"]
+stream = ExtResource("8_qrjf6")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="Book/PrevPageButton" to="." method="_on_prev_page_button_pressed"]

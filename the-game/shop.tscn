@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://delxyxsncrxkk"]
+[gd_scene load_steps=69 format=3 uid="uid://delxyxsncrxkk"]
 
 [ext_resource type="Script" uid="uid://dk40yupids4nm" path="res://shop.gd" id="1_aixl6"]
 [ext_resource type="PackedScene" uid="uid://dyf12t7n04ak4" path="res://table.tscn" id="1_viryw"]
@@ -55,9 +55,15 @@
 [ext_resource type="Texture2D" uid="uid://biis6301ltqv4" path="res://Assets/InHandSprites/mark_batsu.png" id="51_nfljo"]
 [ext_resource type="Texture2D" uid="uid://bpds0whdjsntx" path="res://Assets/InHandSprites/gomi.png" id="51_v6a7d"]
 [ext_resource type="Texture2D" uid="uid://bwr2er8r03ct1" path="res://Assets/InHandSprites/gomi_hover.png" id="52_vhut5"]
-[ext_resource type="PackedScene" uid="uid://c8q7dhyhusgnm" path="res://CookBook.tscn" id="57_sxc6c"]
+[ext_resource type="AudioStream" uid="uid://b36xb2v556sab" path="res://Assets/audio/turd.mp3" id="53_vhut5"]
+[ext_resource type="PackedScene" uid="uid://0wffc0iytbox" path="res://click_sound.tscn" id="54_sxc6c"]
+[ext_resource type="AudioStream" uid="uid://dg7tkskmen4q7" path="res://Assets/audio/dumpSound.mp3" id="55_5obn0"]
+[ext_resource type="AudioStream" uid="uid://cd1jqpdtms0me" path="res://Assets/audio/steve-old-hurt-sound_XKZxUk4.mp3" id="55_v6a7d"]
+[ext_resource type="AudioStream" uid="uid://ca48a17l82hx7" path="res://Assets/audio/frying-steak-74556.mp3" id="56_o5siu"]
+[ext_resource type="AudioStream" uid="uid://blnw2php0ju84" path="res://Assets/audio/woosh.mp3" id="57_sxc6c"]
 [ext_resource type="FontFile" uid="uid://dopl0s2wqle4h" path="res://Assets/Providence Sans Regular.ttf" id="58_5obn0"]
 [ext_resource type="BitMap" uid="uid://n61l4yf0ve5w" path="res://Assets/InHandSprites/eye_normalBmap.png" id="58_o5siu"]
+[ext_resource type="PackedScene" uid="uid://c8q7dhyhusgnm" path="res://CookBook.tscn" id="64_gyssc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sxc6c"]
 load_path = "res://.godot/imported/eye_normal_1.png-4a00fc250b084ce984682d51ef4dc554.ctex"
@@ -208,6 +214,21 @@ stretch_mode = 0
 [node name="InHandItemManager" type="Node" parent="."]
 script = ExtResource("3_blqjs")
 
+[node name="turdSound" type="AudioStreamPlayer2D" parent="InHandItemManager"]
+stream = ExtResource("53_vhut5")
+
+[node name="clickSound" parent="InHandItemManager" instance=ExtResource("54_sxc6c")]
+
+[node name="dumpSound" type="AudioStreamPlayer2D" parent="InHandItemManager"]
+stream = ExtResource("55_5obn0")
+
+[node name="fryingSound" type="AudioStreamPlayer2D" parent="InHandItemManager"]
+stream = ExtResource("56_o5siu")
+volume_db = 1.368
+
+[node name="hurtSound" type="AudioStreamPlayer2D" parent="InHandItemManager"]
+stream = ExtResource("55_v6a7d")
+
 [node name="InHand" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(577.99994, 675)
@@ -235,12 +256,6 @@ texture_click_mask = ExtResource("58_o5siu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="cookbook" parent="." instance=ExtResource("57_sxc6c")]
-offset_left = 1754.0
-offset_top = 317.0
-offset_right = 1899.0
-offset_bottom = 491.0
-
 [node name="menu_button" type="Button" parent="."]
 offset_left = 1709.0
 offset_top = 231.0
@@ -254,6 +269,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qdnt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qdnt6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_qdnt6")
 text = "main menu"
+
+[node name="wooshSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("57_sxc6c")
+
+[node name="cookbook" parent="." instance=ExtResource("64_gyssc")]
+offset_left = 1751.0
+offset_top = 315.0
+offset_right = 1914.0
+offset_bottom = 510.6
 
 [connection signal="pressed" from="pan" to="InHandItemManager" method="_on_pan_pressed"]
 [connection signal="pressed" from="Puriyaan" to="InHandItemManager" method="_on_puriyaan_pressed"]
