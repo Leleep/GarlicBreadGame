@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://delxyxsncrxkk"]
+[gd_scene load_steps=70 format=3 uid="uid://delxyxsncrxkk"]
 
 [ext_resource type="Script" uid="uid://dk40yupids4nm" path="res://shop.gd" id="1_aixl6"]
 [ext_resource type="PackedScene" uid="uid://dyf12t7n04ak4" path="res://table.tscn" id="1_viryw"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://cvtgetvbou6bu" path="res://Assets/masala_hover.png" id="17_8f8xc"]
 [ext_resource type="BitMap" uid="uid://d317hqrrnu3xe" path="res://Assets/ThelaItems/laalJaljeeraBmap.png" id="17_aixl6"]
 [ext_resource type="BitMap" uid="uid://b36wrke4jsnon" path="res://Assets/masalaBmap.png" id="17_db3q1"]
+[ext_resource type="Texture2D" uid="uid://bv064xqrsuyso" path="res://Assets/InHandSprites/tikkiburi.png" id="17_nfljo"]
 [ext_resource type="Texture2D" uid="uid://nrgdc6epnf5n" path="res://Assets/ThelaItems/Done.png" id="19_ugyvi"]
 [ext_resource type="Texture2D" uid="uid://bju5oj4daf6cl" path="res://Assets/ThelaItems/DoneHov.png" id="20_kdli5"]
 [ext_resource type="BitMap" uid="uid://qfxwkf21xjhc" path="res://Assets/ThelaItems/DoneBmap.png" id="21_ebk4j"]
@@ -99,7 +100,7 @@ shadow_offset = Vector2(0, 3.5)
 
 [node name="shop" type="Node"]
 script = ExtResource("1_aixl6")
-InHandTextures = Array[Texture2D]([ExtResource("2_s4e2r"), ExtResource("2_nxxc5"), ExtResource("3_s4e2r"), ExtResource("4_bke4b"), ExtResource("5_4fhph"), ExtResource("6_v6a7d"), ExtResource("7_vhut5"), ExtResource("8_sxc6c"), ExtResource("9_5obn0"), ExtResource("10_o5siu"), ExtResource("11_qdnt6"), ExtResource("12_bg6fk"), ExtResource("13_kv68x"), ExtResource("14_w8sd8"), null, ExtResource("15_gyssc")])
+InHandTextures = Array[Texture2D]([ExtResource("2_s4e2r"), ExtResource("2_nxxc5"), ExtResource("3_s4e2r"), ExtResource("4_bke4b"), ExtResource("5_4fhph"), ExtResource("6_v6a7d"), ExtResource("7_vhut5"), ExtResource("8_sxc6c"), ExtResource("9_5obn0"), ExtResource("10_o5siu"), ExtResource("11_qdnt6"), ExtResource("12_bg6fk"), ExtResource("13_kv68x"), ExtResource("14_w8sd8"), null, ExtResource("15_gyssc"), ExtResource("17_nfljo")])
 
 [node name="table" parent="." instance=ExtResource("1_viryw")]
 texture = ExtResource("2_8kdgp")

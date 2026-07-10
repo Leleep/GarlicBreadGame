@@ -91,7 +91,11 @@ func updateState(item : GlobalEnums.Item):
 		GlobalEnums.State.RPP:
 			currentState = GlobalEnums.State.Garbage
 		GlobalEnums.State.TikkiComplete:
-			currentState = GlobalEnums.State.Garbage
+			match item:
+				GlobalEnums.Item.Tikki:
+					currentState = GlobalEnums.State.Pudina
+				_:
+					currentState = GlobalEnums.State.Garbage
 		GlobalEnums.State.Tikki:
 			match item:
 				GlobalEnums.Item.Tikki:
@@ -121,7 +125,7 @@ func _process(_delta: float) -> void:
 var TikkiOnTava : int = 0
 
 func _on_pan_pressed() -> void:
-	if currentState == GlobalEnums.State.Tikki and TikkiOnTava<4:
+	if currentState == GlobalEnums.State.Tikki and TikkiOnTava < 4:
 		$fryingSound.play()
 		TikkiOnTava += 1
 		tikkiStatus.emit(0)
