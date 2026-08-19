@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://db7fq0dpk48oo"]
+[gd_scene load_steps=24 format=3 uid="uid://db7fq0dpk48oo"]
 
 [ext_resource type="Texture2D" uid="uid://dsbfmjo3ad5s7" path="res://Assets/customer1.png" id="1_fskrt"]
 [ext_resource type="Texture2D" uid="uid://b18vb3txpa5uo" path="res://Assets/customer1_hover.png" id="2_aa2cx"]
@@ -19,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://clq6tpbstnehb" path="res://Assets/alooTikki_new.png" id="17_p11lr"]
 [ext_resource type="Texture2D" uid="uid://ipntmyq2s1ri" path="res://Assets/InHandSprites/DonaSprite.png" id="18_ad1qe"]
 [ext_resource type="AudioStream" uid="uid://db22bho6un2fr" path="res://Assets/audio/kaching.mp3" id="19_r3ycn"]
+[ext_resource type="Texture2D" uid="uid://cmjyuhvfdrmh6" path="res://Assets/timer_radial/yellow_part_mod.png" id="20_c46qr"]
+[ext_resource type="Texture2D" uid="uid://cxwfitdqpr88m" path="res://Assets/timer_radial/brown_part_mod.png" id="21_dm8hm"]
+[ext_resource type="Texture2D" uid="uid://0o4m2futgk2g" path="res://Assets/timer_radial/smartphone_monku.png" id="22_dm8hm"]
+[ext_resource type="Texture2D" uid="uid://bmwgyfa8rg0x3" path="res://Assets/timer_radial/hf.png" id="23_5ungq"]
 
 [node name="Customer1" type="TextureButton"]
 offset_left = 3.0
@@ -54,3 +58,30 @@ texture = ExtResource("18_ad1qe")
 
 [node name="kachingSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("19_r3ycn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="clock" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 1.0
+offset_right = 338.0
+offset_bottom = 96.0
+max_value = 10.0
+fill_mode = 4
+texture_under = ExtResource("20_c46qr")
+texture_progress = ExtResource("21_dm8hm")
+texture_progress_offset = Vector2(18.235, 20.25)
+
+[node name="perSecTimer" type="Timer" parent="."]
+
+[node name="angry" type="Sprite2D" parent="."]
+position = Vector2(294, 41)
+texture = ExtResource("22_dm8hm")
+
+[node name="Hf" type="Sprite2D" parent="."]
+position = Vector2(290, 47)
+texture = ExtResource("23_5ungq")
+
+[connection signal="timeout" from="perSecTimer" to="." method="_on_per_sec_timer_timeout"]

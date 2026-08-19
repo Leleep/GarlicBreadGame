@@ -6,6 +6,7 @@ var speed = 300
 var screen_size
 var final_pos
 var slot_idx
+var cust_time=randi()%10 +10
 var active := false
 var inHandItem
 var hasDona: bool = false
@@ -16,9 +17,18 @@ var hasDona: bool = false
 @export var dish_textures: Array[Texture2D]
 
 func _ready():
+	var timer = get_node("Timer")
+	timer.wait_time = cust_time
+	timer.start()
+	timer.timeout.connect(_on_timer_timeout)
+	$clock.max_value = cust_time
+	$perSecTimer.start()
 	apply_skin()
 	apply_dish()
 	$bubble1.hide()
+	$angry.hide()
+	$Hf.hide()
+	$clock.hide()
 	screen_size = get_viewport_rect().size
 	position = Vector2(-400, 191) #Size of texture button is 200, 382 (Set the postion to x/2, y/2)
 	disabled = true
@@ -49,6 +59,7 @@ func come(pos):
 	tween.tween_property(self, "position", positions[pos], (positions[pos].x - position.x)/speed)
 	await get_tree().create_timer((positions[pos].x - position.x)/speed-0.01).timeout
 	$bubble1.show()
+	$clock.show()
 	disabled = false
 	active = true
 
@@ -59,12 +70,25 @@ func come(pos):
 func _on_pressed() -> void:
 	left_slot.emit(slot_idx, curr_dish)
 
+func _on_timer_timeout():
+	go()
+	get_parent().cust_pos[slot_idx]=0		#this gets the cust_pos variable from the parent, when this is instantiated as a child, and makes the slot empty.
+	$angry.show()
+
 func go():
-	$kachingSound.play()
+	#$kachingSound.play()  #moved to the success definition in customer_manager.gd because this will be used with timer
 	$Don.visible=false
 	$bubble1.hide()
+	$clock.hide()
+	
 	var tween = create_tween()
 	tween.tween_property(self, "position", Vector2(screen_size.x, position.y), (screen_size.x-final_pos.x)/speed)
 	#left_slot.emit(slot_idx)
 	await get_tree().create_timer((screen_size.x-final_pos.x)/speed).timeout
 	queue_free()
+
+func hfshow():
+	$Hf.show()
+
+func _on_per_sec_timer_timeout() -> void:
+	$clock.value+=1

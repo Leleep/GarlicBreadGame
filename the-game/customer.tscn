@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://nqnqmuewlksr"]
+[gd_scene load_steps=5 format=3 uid="uid://nqnqmuewlksr"]
 
 [ext_resource type="PackedScene" uid="uid://db7fq0dpk48oo" path="res://customer_general.tscn" id="2_aive0"]
 [ext_resource type="AudioStream" uid="uid://cd1jqpdtms0me" path="res://Assets/audio/steve-old-hurt-sound_XKZxUk4.mp3" id="3_f7asb"]
+[ext_resource type="AudioStream" uid="uid://db22bho6un2fr" path="res://Assets/audio/kaching.mp3" id="4_co351"]
 [ext_resource type="Script" uid="uid://crsj0ttsjvfti" path="res://customer_manager.gd" id="6_eas7q"]
 
 [node name="Customer" type="Control"]
@@ -18,3 +19,6 @@ metadata/_edit_vertical_guides_ = [201.0]
 
 [node name="hurtSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_f7asb")
+
+[node name="kachingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_co351")

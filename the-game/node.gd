@@ -102,8 +102,11 @@ func updateState(item : GlobalEnums.Item):
 			print("Invalid state encountered")
 	print("State changed to", currentState)
 	inHandItemChanged.emit(currentState)
-	#if currentState == GlobalEnums.State.Garbage:
-		#$turdSound.play()
+
+func sound():
+	if currentState == GlobalEnums.State.Garbage:
+		$turdSound.play()
+	else: click.play()
 
 func succeeded():
 	currentState=GlobalEnums.State.Empty
@@ -131,7 +134,7 @@ func _on_pan_pressed() -> void:
 		updateState(GlobalEnums.Item.FriedTikki)
 		TikkiOnTava -= 1
 		tikkiStatus.emit(1)
-		click.play()
+		sound()
 	else :
 		print("Tava Not Applicable")
 		$hurtSound.play()
@@ -140,51 +143,51 @@ func _on_pan_pressed() -> void:
 
 func _on_plates_pressed() -> void:
 	updateState(GlobalEnums.Item.Dona)
-	click.play()
+	sound()
 
 
 func _on_red_paani_pressed() -> void:
 	updateState(GlobalEnums.Item.RedPaani)
-	click.play()
+	sound()
 
 
 func _on_green_pani_pressed() -> void:
 	updateState(GlobalEnums.Item.GreenPaani)
-	click.play()
+	sound()
 
 
 func _on_puriyaan_pressed() -> void:
 	updateState(GlobalEnums.Item.Puri)
-	click.play()
+	sound()
 
 
 func _on_masala_pressed() -> void:
 	updateState(GlobalEnums.Item.Masala)
-	click.play()
+	sound()
 
 
 func _on_kachchi_tikkiyaan_pressed() -> void:
 	updateState(GlobalEnums.Item.Tikki)
-	click.play()
+	sound()
 
 
 func _on_aloo_matar_pressed() -> void:
 	updateState(GlobalEnums.Item.Aloo)
-	click.play()
+	sound()
 
 
 func _on_dahi_pressed() -> void:
 	updateState(GlobalEnums.Item.Dahi)
-	click.play()
+	sound()
 
 
 func _on_chutney_pressed() -> void:
 	updateState(GlobalEnums.Item.Chutney)
-	click.play()
+	sound()
 
 # Korewa Comment desu
 func _on_dustbin_pressed() -> void:
-	if currentState == GlobalEnums.State.Empty : click.play()
+	if currentState == GlobalEnums.State.Empty : sound()
 	else : dump.play()
 	currentState = GlobalEnums.State.Empty
 	print("Dustbin used. Current GlobalEnums.State is ", currentState)

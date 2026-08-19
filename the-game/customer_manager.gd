@@ -4,7 +4,7 @@ var cust_pos: Array = [0, 0, 0]
 var customer_instances: Array = [0,0,0]
 var cust_item
 signal success
-@export var customer_scene: PackedScene 
+@export var customer_scene: PackedScene
 
 func _ready() -> void:
 	spawn_manager()
@@ -32,13 +32,11 @@ func itemState_toCustomerChild(state):
 	
 #cust_item is given by main function (main.gd), which is the item in hand and cust_dish is given by customer instance when its sprite is pressed
 func _on_left_slot(slot_index, cust_dish):
-	if(cust_dish!=GlobalEnums.State.TikkiComplete):
+	if(cust_dish!=GlobalEnums.State.TikkiComplete): # This is if customer demands pani puri, so we first have to give dona
 		if(customer_instances[slot_index].hasDona):
 			if cust_item == cust_dish:
-				success.emit()
-				print("correct dish")
-				customer_instances[slot_index].go()
-				cust_pos[slot_index]=0
+				goSuccess(slot_index)
+				$kachingSound.play()
 			else:
 				print("wrong dish, make correct fool")
 				$hurtSound.play()
@@ -50,12 +48,16 @@ func _on_left_slot(slot_index, cust_dish):
 			else:
 				# Something else insteaed of Dona given to the customer
 				$hurtSound.play()
-	else:
+	else: #This is if the customer demands tikki, no need to give dona
 		if cust_item == cust_dish:
-			success.emit()
-			print("correct dish")
-			customer_instances[slot_index].go()
-			cust_pos[slot_index]=0
+			goSuccess(slot_index)
+			$kachingSound.play()
 		else:
 			print("wrong dish, make correct fool")
 			$hurtSound.play()
+
+func goSuccess(slot_index): #call go and empty the slot.
+	success.emit()
+	customer_instances[slot_index].hfshow()
+	customer_instances[slot_index].go()
+	cust_pos[slot_index]=0
