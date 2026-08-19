@@ -13,3 +13,7 @@ func _on_in_hand(state):
 
 func _on_success():
 	inhandnode.succeeded()
+
+
+func _on_customer_success() -> void:
+	inhandnode.succeeded()

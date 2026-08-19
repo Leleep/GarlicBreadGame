@@ -15,16 +15,26 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
+	var shop = get_parent()
+	var shopChilds = shop.get_children()
 	if $Book.visible:
 		$Book.visible = false
+		# enable rest things
+		for child in shopChilds:
+				if child.is_class("BaseButton") and child.name != "cookbook":
+					child.disabled = false
 	else :
 		$Book.visible = true
+		# disable all the other buttons
+		for child in shopChilds:
+			if child.is_class("BaseButton") and child.name != "cookbook":
+				child.disabled = true
 
 func flip_pages(pageFlipBy : int):
 	pageNumberOpened += pageFlipBy
 	if (pageNumberOpened < 0) : pageNumberOpened = 0
 	elif (pageNumberOpened > 2) : pageNumberOpened = 2
-	else : $Book/pageFlipSound.play()
+	$Book/pageFlipSound.play()
 	$Book.texture = bookTexture[pageNumberOpened]
 
 func _on_prev_page_button_pressed() -> void:

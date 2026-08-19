@@ -91,7 +91,11 @@ func updateState(item : GlobalEnums.Item):
 		GlobalEnums.State.RPP:
 			currentState = GlobalEnums.State.Garbage
 		GlobalEnums.State.TikkiComplete:
-			currentState = GlobalEnums.State.Garbage
+			match item:
+				GlobalEnums.Item.Tikki:
+					currentState = GlobalEnums.State.Pudina
+				_:
+					currentState = GlobalEnums.State.Garbage
 		GlobalEnums.State.Tikki:
 			match item:
 				GlobalEnums.Item.Tikki:
@@ -109,8 +113,10 @@ func sound():
 	else: click.play()
 
 func succeeded():
+	earn_money()
 	currentState=GlobalEnums.State.Empty
 	inHandItemChanged.emit(currentState)
+	print("Empty Hand LOL")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -124,7 +130,7 @@ func _process(_delta: float) -> void:
 var TikkiOnTava : int = 0
 
 func _on_pan_pressed() -> void:
-	if currentState == GlobalEnums.State.Tikki and TikkiOnTava<4:
+	if currentState == GlobalEnums.State.Tikki and TikkiOnTava < 4:
 		$fryingSound.play()
 		TikkiOnTava += 1
 		tikkiStatus.emit(0)
@@ -192,3 +198,15 @@ func _on_dustbin_pressed() -> void:
 	currentState = GlobalEnums.State.Empty
 	print("Dustbin used. Current GlobalEnums.State is ", currentState)
 	inHandItemChanged.emit(currentState)
+	
+func earn_money() -> void:
+	var shop = get_parent()
+	match currentState:
+		GlobalEnums.State.TikkiComplete:
+			shop.money += 1
+		GlobalEnums.State.RPP:
+			shop.money += 2
+		GlobalEnums.State.GPP:
+			shop.money += 3
+	print("Shop Money : ", shop.money)
+	return

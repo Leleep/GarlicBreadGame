@@ -20,4 +20,5 @@ enum State {
 	TikkiComplete,
 	Garbage,
 	Tikki,
+	Pudina,
 	}

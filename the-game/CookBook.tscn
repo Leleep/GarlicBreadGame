@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c8q7dhyhusgnm"]
 
 [ext_resource type="Texture2D" uid="uid://drsn2wnk0o0sn" path="res://Assets/InHandSprites/cookbook.png" id="1_0lm0m"]
-[ext_resource type="Script" path="res://cook_book.gd" id="1_afwdq"]
+[ext_resource type="Script" uid="uid://6eb04hq5gwgs" path="res://cook_book.gd" id="1_afwdq"]
 [ext_resource type="Texture2D" uid="uid://cx573uree0ctv" path="res://Assets/CookBook/1.png" id="2_nl42x"]
 [ext_resource type="Texture2D" uid="uid://bjaheg2c052cr" path="res://Assets/InHandSprites/cookbook_hover.png" id="2_qrjf6"]
 [ext_resource type="Texture2D" uid="uid://dqip6p1dbmx38" path="res://Assets/CookBook/2.png" id="3_03dyi"]

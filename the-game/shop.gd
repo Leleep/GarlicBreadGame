@@ -2,6 +2,7 @@ extends Node
 
 @export var InHandTextures: Array[Texture2D]
 @onready var wooshSound := $wooshSound
+var money := 0
 
 func _ready() -> void:
 	$InHandItemManager.inHandItemChanged.connect(change_texture_hand)
@@ -30,3 +31,7 @@ func _on_texture_button_mouse_exited() -> void:
 
 func _on_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://loading_screen.tscn")
+
+
+func _on_customer_success() -> void:
+	pass # Replace with function body.
