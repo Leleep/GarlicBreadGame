@@ -263,11 +263,13 @@ offset_top = 231.0
 offset_right = 1916.0
 offset_bottom = 297.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("58_5obn0")
 theme_override_font_sizes/font_size = 41
 theme_override_styles/normal = SubResource("StyleBoxFlat_o5siu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qdnt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qdnt6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_o5siu")
 theme_override_styles/focus = SubResource("StyleBoxFlat_qdnt6")
 text = "main menu"
 

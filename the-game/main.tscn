@@ -18,3 +18,5 @@ z_index = -2
 position = Vector2(966, 412)
 scale = Vector2(0.7532484, 0.7532484)
 texture = ExtResource("4_1bvp3")
+
+[connection signal="success" from="Customer" to="." method="_on_customer_success"]

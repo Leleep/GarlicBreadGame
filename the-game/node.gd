@@ -106,12 +106,14 @@ func updateState(item : GlobalEnums.Item):
 			print("Invalid state encountered")
 	print("State changed to", currentState)
 	inHandItemChanged.emit(currentState)
-	#if currentState == GlobalEnums.State.Garbage:
-		#$turdSound.play()
+	if currentState == GlobalEnums.State.Garbage:
+		$turdSound.play()
 
 func succeeded():
+	earn_money()
 	currentState=GlobalEnums.State.Empty
 	inHandItemChanged.emit(currentState)
+	print("Empty Hand LOL")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -193,3 +195,15 @@ func _on_dustbin_pressed() -> void:
 	currentState = GlobalEnums.State.Empty
 	print("Dustbin used. Current GlobalEnums.State is ", currentState)
 	inHandItemChanged.emit(currentState)
+	
+func earn_money() -> void:
+	var shop = get_parent()
+	match currentState:
+		GlobalEnums.State.TikkiComplete:
+			shop.money += 1
+		GlobalEnums.State.RPP:
+			shop.money += 2
+		GlobalEnums.State.GPP:
+			shop.money += 3
+	print("Shop Money : ", shop.money)
+	return

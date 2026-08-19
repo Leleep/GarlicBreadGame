@@ -1212,6 +1212,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_3xr4f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.018000001
@@ -1229,11 +1230,13 @@ theme_override_constants/separation = 49
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_lsrgu")
 theme_override_font_sizes/font_size = 120
 theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rhts7")
 theme_override_styles/focus = SubResource("StyleBoxFlat_06t4h")
 text = "Start"
 
@@ -1241,11 +1244,13 @@ text = "Start"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_lsrgu")
 theme_override_font_sizes/font_size = 84
 theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rhts7")
 theme_override_styles/focus = SubResource("StyleBoxFlat_06t4h")
 text = "How to play"
 
@@ -1253,25 +1258,30 @@ text = "How to play"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_lsrgu")
 theme_override_font_sizes/font_size = 120
 theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rhts7")
 theme_override_styles/focus = SubResource("StyleBoxFlat_06t4h")
 text = "Exit"
 
 [node name="thela_rot" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(1451, 540)
 sprite_frames = SubResource("SpriteFrames_rhts7")
 
 [node name="howto" type="Sprite2D" parent="."]
 visible = false
+z_index = 2
 position = Vector2(959, 539)
 texture = ExtResource("291_lsrgu")
 
 [node name="closeButton" type="TextureButton" parent="."]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 1728.0
 offset_top = 99.0
