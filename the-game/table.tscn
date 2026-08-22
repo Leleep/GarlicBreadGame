@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyf12t7n04ak4"]
+[gd_scene load_steps=3 format=3 uid="uid://dyf12t7n04ak4"]
 
 [ext_resource type="Texture2D" uid="uid://7u37lfauow47" path="res://Assets/Main_theli.png" id="1_jd0nb"]
+[ext_resource type="Texture2D" uid="uid://c64t48to7qdlq" path="res://Assets/money/okane.png" id="2_v5i0k"]
 
 [node name="Sprite2D" type="Sprite2D"]
 position = Vector2(960, 540)
 texture = ExtResource("1_jd0nb")
+
+[node name="Okane" type="Sprite2D" parent="."]
+position = Vector2(-845, -273)
+texture = ExtResource("2_v5i0k")

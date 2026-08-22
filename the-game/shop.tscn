@@ -282,6 +282,18 @@ offset_top = 315.0
 offset_right = 1914.0
 offset_bottom = 510.6
 
+[node name="amount" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.042000003
+anchor_top = 0.289
+anchor_right = 0.10700001
+anchor_bottom = 0.31500003
+offset_left = -20.640007
+offset_top = 11.880005
+offset_right = -18.440018
+offset_bottom = 11.799957
+text = "0"
+
 [connection signal="pressed" from="pan" to="InHandItemManager" method="_on_pan_pressed"]
 [connection signal="pressed" from="Puriyaan" to="InHandItemManager" method="_on_puriyaan_pressed"]
 [connection signal="pressed" from="kachchiTikkiyaan" to="InHandItemManager" method="_on_kachchi_tikkiyaan_pressed"]

@@ -8,44 +8,47 @@
 [ext_resource type="Texture2D" uid="uid://dsmr0535o8v4o" path="res://Assets/right.png" id="5_38ncu"]
 [ext_resource type="Texture2D" uid="uid://clq6tpbstnehb" path="res://Assets/alooTikki_new.png" id="6_jrdmd"]
 
-[node name="loading" type="Sprite2D"]
-position = Vector2(960, 540)
-texture = ExtResource("1_mggpi")
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 8
 script = ExtResource("2_401ed")
 
-[node name="Frame" type="Sprite2D" parent="."]
+[node name="loading" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_mggpi")
+
+[node name="Frame" type="Sprite2D" parent="loading"]
 modulate = Color(0.8047426, 0.80474263, 0.8047426, 1)
 z_index = -1
 rotation = 1.5707964
 scale = Vector2(1.0651561, 1.2842344)
 texture = ExtResource("2_htrc2")
 
-[node name="RedPuchkaNew" type="Sprite2D" parent="."]
+[node name="RedPuchkaNew" type="Sprite2D" parent="loading"]
 position = Vector2(614, -124)
 rotation = -0.44854963
 scale = Vector2(0.7177556, 0.7177556)
 texture = ExtResource("3_pa1l2")
 
-[node name="PuchkaNew" type="Sprite2D" parent="."]
+[node name="PuchkaNew" type="Sprite2D" parent="loading"]
 z_index = -1
 position = Vector2(-217, 294)
 rotation = 0.44854963
 scale = Vector2(0.7311034, 0.7311034)
 texture = ExtResource("4_401ed")
 
-[node name="PuchkaNew2" type="Sprite2D" parent="."]
+[node name="PuchkaNew2" type="Sprite2D" parent="loading"]
 z_index = -1
 position = Vector2(566, 269.99997)
 rotation = -0.44854963
 scale = Vector2(0.7311034, 0.7311034)
 texture = ExtResource("4_401ed")
 
-[node name="Right" type="Sprite2D" parent="."]
+[node name="Right" type="Sprite2D" parent="loading"]
 z_index = -1
 position = Vector2(-4, -293)
 texture = ExtResource("5_38ncu")
 
-[node name="AlooTikkiNew" type="Sprite2D" parent="."]
+[node name="AlooTikkiNew" type="Sprite2D" parent="loading"]
 position = Vector2(-609.00006, -123.00002)
 rotation = -0.17453292
 scale = Vector2(0.760855, 0.760855)

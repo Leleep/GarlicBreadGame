@@ -60,7 +60,7 @@ func come(pos):
 	await get_tree().create_timer((positions[pos].x - position.x)/speed-0.01).timeout
 	$bubble1.show()
 	$clock.show()
-	disabled = false
+	disabled = false #enables the customer to be clicked after it arrives
 	active = true
 
 #func itemState(state):
@@ -71,6 +71,8 @@ func _on_pressed() -> void:
 	left_slot.emit(slot_idx, curr_dish)
 
 func _on_timer_timeout():
+	disabled = true
+	active = false
 	go()
 	get_parent().cust_pos[slot_idx]=0		#this gets the cust_pos variable from the parent, when this is instantiated as a child, and makes the slot empty.
 	$angry.show()

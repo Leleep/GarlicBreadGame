@@ -35,7 +35,7 @@ func _on_how_to_pressed() -> void:
 		button.disabled = true
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://main.tscn")
+	SceneLoader.load_scene("res://main.tscn")
 
 
 func _on_exit_pressed() -> void:

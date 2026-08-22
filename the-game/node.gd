@@ -204,9 +204,13 @@ func earn_money() -> void:
 	match currentState:
 		GlobalEnums.State.TikkiComplete:
 			shop.money += 1
+			shop.inc_amount(shop.money)
 		GlobalEnums.State.RPP:
 			shop.money += 2
+			shop.inc_amount(shop.money)
 		GlobalEnums.State.GPP:
 			shop.money += 3
+			shop.inc_amount(shop.money)
 	print("Shop Money : ", shop.money)
+		
 	return

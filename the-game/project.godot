@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalEnums="*res://GlobalEnums.gd"
+SceneLoader="*res://scene_loader.gd"
 
 [display]
 
